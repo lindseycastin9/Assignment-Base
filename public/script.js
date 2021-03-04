@@ -2,22 +2,31 @@ async function windowActions() {
     console.log('window loaded');
     const form = document.querySelector('.userform');
     const search = document.querySelector('#zip');
+    const targetList = document.querySelector('.target-list');
 
     const request = await fetch('/api');
     const data = await request.json();
+    console.table(data);
 
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        console.log('submit fired');
-        const dislpay = data.filter((record) => record.city === search.value);
-
-        console.table(data.data);
-
-    })
     search.addEventListener('input', (event) => {
-        console.log('input', event.target)
-    })
-    window.onload = windowActions;
+        event.preventDefault();
+        console.log('input detected', search.value);
+        const display = data.filter((record) => record.zip === search.value);
+        const appendBox = document.createElement('div');
+        display.forEach((row) => {
 
-    console.log(data)
+            const appendItem = document.createElement("li");
+            appendItem.innerText = row.name;
+            targetList.append(appendItem);
+            const appendItem1 = document.createElement("li");
+            appendItem1.innerText = row.city;
+            targetList.append(appendItem1);
+            const appendItem2 = document.createElement("li");
+            appendItem2.innerText = row.zip;
+            targetList.append(appendItem2);
+        });
+        console.log('input', event.target.value);
+    });
+
 }
+window.onload = windowActions;
