@@ -1,6 +1,32 @@
-.target-list {
-    background: gray;
+@import url('https://fonts.google.com/specimen/RocknRoll+One?preview.text_type=custom');
 
+html {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+h1 {
+    text-align: center;
+    font-family: 'RocknRoll One', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+body {
+    font-family: 'RocknRoll One', sans-serif;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 15px; 
+}
+
+form {
+    background: lightgray;
+    text-align: center;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.target-list {
+    background: lightgray;
 }
 
 .button.is-primary {

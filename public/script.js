@@ -3,10 +3,11 @@ async function windowActions() {
     const form = document.querySelector('.userform');
     const search = document.querySelector('#zip');
     const targetList = document.querySelector('.target-list');
-    const display = document.querySelector('.each')
+    const targetBox = document.querySelector('.target-box');
 
     const request = await fetch('/api');
     const data = await request.json();
+
     console.table(data);
 
     search.addEventListener('input', (event) => {
@@ -15,6 +16,8 @@ async function windowActions() {
         const display = data.filter((record) => record.zip === search.value);
 
         display.forEach((row) => {
+            // const appendBox = document.createElement("div");
+            // targetBox.appendChild(appendBox);
 
             const appendItem = document.createElement("li");
             appendItem.innerText = row.name;
@@ -25,6 +28,9 @@ async function windowActions() {
             const appendItem2 = document.createElement("li");
             appendItem2.innerText = row.zip;
             targetList.append(appendItem2);
+
+            targetBox.appendChild(targetList);
+
         });
         console.log('input', event.target.value);
     });
