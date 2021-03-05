@@ -16,8 +16,8 @@ async function windowActions() {
         const display = data.filter((record) => record.zip === search.value);
 
         display.forEach((row) => {
-            // const appendBox = document.createElement("div");
-            // targetBox.appendChild(appendBox);
+            const appendBox = document.createElement("div");
+            targetBox.appendChild(appendBox);
 
             const appendItem = document.createElement("li");
             appendItem.innerText = row.name;
