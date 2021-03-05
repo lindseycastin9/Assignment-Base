@@ -1,3 +1,10 @@
 .target-list {
-    background: yellow
+    background: gray;
+
 }
+
+.button.is-primary {
+    background: black;
+}
+
+

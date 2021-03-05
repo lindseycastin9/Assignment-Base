@@ -3,6 +3,7 @@ async function windowActions() {
     const form = document.querySelector('.userform');
     const search = document.querySelector('#zip');
     const targetList = document.querySelector('.target-list');
+    const display = document.querySelector('.each')
 
     const request = await fetch('/api');
     const data = await request.json();
@@ -12,7 +13,7 @@ async function windowActions() {
         event.preventDefault();
         console.log('input detected', search.value);
         const display = data.filter((record) => record.zip === search.value);
-        const appendBox = document.createElement('div');
+
         display.forEach((row) => {
 
             const appendItem = document.createElement("li");
