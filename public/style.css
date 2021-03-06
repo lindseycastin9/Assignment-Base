@@ -1,8 +1,9 @@
 @import url('https://fonts.google.com/specimen/RocknRoll+One?preview.text_type=custom');
 
 html {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background: lightblue;
 }
+
 h1 {
     text-align: center;
     font-family: 'RocknRoll One', sans-serif;
@@ -12,18 +13,15 @@ h1 {
 
 body {
     font-family: 'RocknRoll One', sans-serif;
+}
+
+.list-item {
+    color: white;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 15px; 
-}
-
-.target-box {
-    margin: 30px;
-}
-
-.target-list {
-    font-size: small;
 }
 
 form {
@@ -35,6 +33,7 @@ form {
 
 .target-list {
     background: lightgray;
+    font-size: small;
 }
 
 .button.is-primary {

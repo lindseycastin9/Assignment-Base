@@ -3,7 +3,6 @@ async function windowActions() {
     const form = document.querySelector('.userform');
     const search = document.querySelector('#zip');
     const targetList = document.querySelector('.target-list');
-    const targetBox = document.querySelector('.target-box');
 
     const request = await fetch('/api');
     const data = await request.json();
@@ -16,7 +15,7 @@ async function windowActions() {
         const display = data.filter((record) => record.zip === search.value);
 
         display.forEach((row) => {
-            const appendBox = document.createElement("div");
+            /* const appendBox = document.createElement("div");
             targetBox.appendChild(appendBox);
 
             const appendItem = document.createElement("li");
@@ -29,8 +28,12 @@ async function windowActions() {
             appendItem2.innerText = row.zip;
             targetList.append(appendItem2);
 
-            targetBox.appendChild(targetList);
+            targetBox.appendChild(targetList); */
 
+            const appendItem = document.createElement("li");
+            appendItem.classList.add('list-item');
+            appendItem.innerHTML = row.category + ' - ' + row.name + ' - ' + row.city + ', ' + row.zip;
+            targetList.append(appendItem);
         });
         console.log('input', event.target.value);
     });
